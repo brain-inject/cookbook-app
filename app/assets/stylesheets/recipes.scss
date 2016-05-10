@@ -1,3 +1,19 @@
 // Place all the styles related to the recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$border-color: red;
+
+h1 {
+  border: solid green 2px;
+}
+
+.list {
+  h1 {
+    border: solid $border-color 2px;
+  }
+
+  p {
+    background-color: pink;
+  }
+}
