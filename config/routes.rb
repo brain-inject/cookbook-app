@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  get '/' => 'recipes#home'
-  get '/single_recipe' => 'recipes#single'
+  get '/' => 'recipes#index'
+  get '/recipes' => 'recipes#index'
 end
