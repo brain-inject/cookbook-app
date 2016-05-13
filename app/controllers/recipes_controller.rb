@@ -21,4 +21,21 @@ class RecipesController < ApplicationController
 
     render 'show.html.erb'
   end
+
+  def edit
+    @recipe = Recipe.find_by(id: params[:id])
+  end
+
+  def update
+    @recipe = Recipe.find_by(id: params[:id])
+    
+    @recipe.update(
+      title: params[:title],
+      chef: params[:chef],
+      instructions: params[:instructions],
+      ingredients: params[:ingredients]
+      ) 
+
+    render 'show.html.erb'
+  end
 end
