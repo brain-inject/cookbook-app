@@ -16,7 +16,8 @@ class RecipesController < ApplicationController
       title: params[:title],
       chef: params[:chef],
       instructions: params[:instructions],
-      ingredients: params[:ingredients]
+      ingredients: params[:ingredients],
+      image: params[:image]
       )
 
     flash[:success] = "Recipe Created"
@@ -34,7 +35,8 @@ class RecipesController < ApplicationController
       title: params[:title],
       chef: params[:chef],
       instructions: params[:instructions],
-      ingredients: params[:ingredients]
+      ingredients: params[:ingredients],
+      image: params[:image]
       ) 
 
     flash[:success] = "Recipe Updated"

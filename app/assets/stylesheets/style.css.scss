@@ -1,5 +1,24 @@
 
+$accent-color: #820;
+
 body {
   font-family: Optima,Segoe,"Segoe UI",Candara,Calibri,Arial,sans-serif;
   background-image: url("squidfingers.jpg");
+}
+
+h1 {
+  border-bottom: solid $accent-color 1px;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: $accent-color;
+}
+
+.thumbnail {
+  height: 550px;
 }
