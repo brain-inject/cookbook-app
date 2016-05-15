@@ -3,4 +3,6 @@
 <h4>Ingredients: <%= @recipe.ingredients %></h4>
 <h4>Instructions: <%= @recipe.instructions %></h4>
 
-<h5><a href="/recipes/<%= @recipe.id %>/edit">Edit</a></h5>
+<h5><%= link_to 'Edit', "/recipes/#{@recipe.id}/edit" %></h5>
+<h5><%= link_to "Delete", "/recipes/#{@recipe.id}", method: :delete %></h5>
+
