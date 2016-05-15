@@ -7,8 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container">
+    <% flash.each do |name, message| %>
+      <div class="alert alert-<%= name %> alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong><%= name.upcase %>!</strong> <%= message %>
+      </div>
+    <% end %>
+
     <h5><%= link_to 'Home', "/" %></h5>
     <h5><%= link_to 'New', "/recipes/new" %></h5>
     <%= yield %>
+  </div>
 </body>
 </html>
