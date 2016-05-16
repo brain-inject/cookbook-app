@@ -5,6 +5,8 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @ingredients = @recipe.ingredient_list
+    @instructions = @recipe.instruction_list
   end
 
   def new
@@ -17,6 +19,7 @@ class RecipesController < ApplicationController
       chef: params[:chef],
       instructions: params[:instructions],
       ingredients: params[:ingredients],
+      prep_time: params[:prep_time],
       image: params[:image]
       )
 
@@ -36,6 +39,7 @@ class RecipesController < ApplicationController
       chef: params[:chef],
       instructions: params[:instructions],
       ingredients: params[:ingredients],
+      prep_time: params[:prep_time],
       image: params[:image]
       ) 
 

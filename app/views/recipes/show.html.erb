@@ -1,7 +1,26 @@
 <h1><%= @recipe.title %></h1>
 <h3>By: <%= @recipe.chef %></h3>
-<h4>Ingredients: <%= @recipe.ingredients %></h4>
-<h4>Instructions: <%= @recipe.instructions %></h4>
+<h5>Last Updated On: <%= @recipe.friendly_updated_at %></h5>
+<h5>Prep Time: <%= @recipe.friendly_prep_time %></h5>
+<!-- 5 Hours, 30 Minutes -->
+
+<h4>Ingredients:</h4>
+
+<ul>
+  <% @ingredients.each do |ingredient| %>
+    <li><%= ingredient %></li>
+  <% end %>
+</ul>
+
+<h4>Instructions: </h4>
+
+<ol>
+  <% @instructions.each do |instruction| %>
+    <li><%= instruction %></li>
+  <% end %>
+</ol>
+
+<%= image_tag @recipe.image %>
 
 <h5><%= link_to 'Edit', "/recipes/#{@recipe.id}/edit" %></h5>
 <h5><%= link_to "Delete", "/recipes/#{@recipe.id}", method: :delete %></h5>
