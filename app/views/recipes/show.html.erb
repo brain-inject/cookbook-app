@@ -1,27 +1,33 @@
-<h1><%= @recipe.title %></h1>
-<h3>By: <%= @recipe.chef %></h3>
-<h5>Last Updated On: <%= @recipe.friendly_updated_at %></h5>
-<h5>Prep Time: <%= @recipe.friendly_prep_time %></h5>
-<!-- 5 Hours, 30 Minutes -->
+<h1><%= @recipe.title %>
+  <div class="btn-group pull-right" role="group">
+    <%= link_to 'Edit', "/recipes/#{@recipe.id}/edit", class: "btn btn-info" %>
+    <%= link_to "Delete", "/recipes/#{@recipe.id}", method: :delete, class: "btn btn-danger" %>
+  </div>
+</h1>
+<div class="row">
+  <div class="col-md-3 col-md-offset-1 col-xs-10 col-xs-offset-1 show-text">
+    <h3>By: <%= @recipe.chef %></h3>
+    <h5>Last Updated On: <%= @recipe.friendly_updated_at %></h5>
+    <h5>Prep Time: <%= @recipe.friendly_prep_time %></h5>
+    <!-- 5 Hours, 30 Minutes -->
 
-<h4>Ingredients:</h4>
+    <h4>Ingredients:</h4>
 
-<ul>
-  <% @ingredients.each do |ingredient| %>
-    <li><%= ingredient %></li>
-  <% end %>
-</ul>
+    <ul>
+      <% @ingredients.each do |ingredient| %>
+        <li><%= ingredient %></li>
+      <% end %>
+    </ul>
 
-<h4>Instructions: </h4>
+    <h4>Instructions: </h4>
 
-<ol>
-  <% @instructions.each do |instruction| %>
-    <li><%= instruction %></li>
-  <% end %>
-</ol>
+    <ol>
+      <% @instructions.each do |instruction| %>
+        <li><%= instruction %></li>
+      <% end %>
+    </ol>
+  </div>
 
-<%= image_tag @recipe.image %>
-
-<h5><%= link_to 'Edit', "/recipes/#{@recipe.id}/edit" %></h5>
-<h5><%= link_to "Delete", "/recipes/#{@recipe.id}", method: :delete %></h5>
+  <%= image_tag @recipe.image, class: "img-responsive col-md-6 col-xs-10 col-xs-offset-1" %>
+</div>
 

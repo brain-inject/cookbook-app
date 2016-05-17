@@ -1,7 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Recipe.create!([
+  {title: "Cookies", chef: "Cookie Monster", instructions: "pour mix in bowl, add egg and milk, mix, cook", ingredients: "cookie mix, egg, milk", image: "http://cdn.grindtv.com/wp-content/uploads/2013/09/cookiemonster.jpeg", prep_time: 35},
+  {title: "lagsana", chef: "Bad Josh", instructions: "add butterscotch to sock, add toothpaste to mixture, heat at 325 for 16 hours, put out fire", ingredients: "socks, toothpaste, butterscotch", image: "http://www.lesauce.com/wp-content/uploads/2013/01/tumblr_m2t8mqROz21qcs8rio1_500.gif", prep_time: 450},
+  {title: "Hand Sandwich", chef: "Not so bad Josh", instructions: "take wrapper off cheese slice product, place cheese product in left hand, put your hands together", ingredients: "left hand, right hand, cheese slice product", image: "http://occ144datkn3vrjlq7r63p19.wpengine.netdna-cdn.com/wp-content/uploads/2012/06/Hand-Sandwiches.jpeg", prep_time: 3},
+  {title: "Egg", chef: "Chicken", instructions: "squeeze", ingredients: "Chicken", image: "https://authoritynutrition.com/wp-content/uploads/2013/07/chicken-and-egg-smaller.jpg", prep_time: 1},
+  {title: "Junk food", chef: "Terry", instructions: "unwrap, enjoy", ingredients: "candy bar from vending machine", image: "http://previews.123rf.com/images/123rfaurinko/123rfaurinko1207/123rfaurinko120700060/14515230-Snickers-candy-bar-isolated-on-a-white-background-Stock-Photo.jpg", prep_time: 65}
+])
