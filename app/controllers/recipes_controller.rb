@@ -27,7 +27,7 @@ class RecipesController < ApplicationController
   def create
     recipe = Recipe.create(
       title: params[:title],
-      chef: params[:chef],
+      user_id: current_user.id,
       instructions: params[:instructions],
       ingredients: params[:ingredients],
       prep_time: params[:prep_time],
@@ -47,7 +47,6 @@ class RecipesController < ApplicationController
     
     recipe.update(
       title: params[:title],
-      chef: params[:chef],
       instructions: params[:instructions],
       ingredients: params[:ingredients],
       prep_time: params[:prep_time],

@@ -24,6 +24,9 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li class="active"><a href="/recipes/new">New<span class="sr-only">(current)</span></a></li>
+          <% if user_signed_in? %>
+            <li class="active"><a href="#"><%= current_user.email %><span class="sr-only">(current)</span></a></li>
+          <% end %>
         </ul>
       
 
@@ -43,7 +46,12 @@
               <li><a href="/?sort=prep_time">Sort by Prep Time</a></li>
               <li><a href="#">Something else here</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
+              <% if user_signed_in? %>
+                <li><%= link_to 'Sign Out', '/users/sign_out', method: :delete %></li>
+              <% else %>
+                <li><%= link_to 'Sign In', '/users/sign_in' %></li>
+                <li><%= link_to 'Sign Up', '/users/sign_up' %></li>
+              <% end %>
             </ul>
           </li>
         </ul>

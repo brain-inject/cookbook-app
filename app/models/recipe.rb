@@ -1,5 +1,7 @@
 class Recipe < ActiveRecord::Base
 
+  belongs_to :user
+
   def ingredient_list
     ingredients.split(', ')
   end
@@ -22,5 +24,9 @@ class Recipe < ActiveRecord::Base
     printed_string += "#{minutes} #{'Minute'.pluralize(minutes)}" if minutes > 0
 
     printed_string
+  end
+
+  def chef
+    user.email
   end
 end

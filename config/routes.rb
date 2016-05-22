@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get '/' => 'recipes#index'
+  devise_for :users
+  root to: 'recipes#index'
   get '/recipes' => 'recipes#index'
 
   get '/recipes/new' => 'recipes#new'
